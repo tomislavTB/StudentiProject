@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentiProject.Models
 {
-    public class Grade
+    public class Grade : BaseModel
     {
 
 

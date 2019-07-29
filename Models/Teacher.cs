@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentiProject.Models
 {
-    public class Teacher
+    public class Teacher : BaseModel
     {
 
         [Required(ErrorMessage = "Please provide a value for FirstName field")]

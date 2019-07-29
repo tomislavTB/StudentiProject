@@ -27,8 +27,12 @@ namespace StudentiProject.Migrations
 
                     b.Property<int>("CountryId");
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.Property<string>("Zip")
                         .IsRequired()
@@ -45,6 +49,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 1,
                             CountryId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Velika Gorica",
                             Zip = "10000"
                         },
@@ -52,6 +57,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 2,
                             CountryId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "New York",
                             Zip = "10001"
                         },
@@ -59,6 +65,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 3,
                             CountryId = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "London ",
                             Zip = "56273"
                         },
@@ -66,6 +73,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 4,
                             CountryId = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Paris",
                             Zip = "75000"
                         },
@@ -73,6 +81,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 5,
                             CountryId = 5,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Amsterdam ",
                             Zip = "1011"
                         });
@@ -89,8 +98,12 @@ namespace StudentiProject.Migrations
 
                     b.Property<int>("CityId");
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -104,6 +117,7 @@ namespace StudentiProject.Migrations
                             Id = 1,
                             Address = "Zagrebačka ul. 5",
                             CityId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "University of Applied Sciences Velika Gorica"
                         },
                         new
@@ -111,6 +125,7 @@ namespace StudentiProject.Migrations
                             Id = 2,
                             Address = "1585 Massachusetts Avenue",
                             CityId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Columbia University"
                         },
                         new
@@ -118,6 +133,7 @@ namespace StudentiProject.Migrations
                             Id = 3,
                             Address = "Vrbik 8",
                             CityId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Tehničko veleučilište u Zagrebu"
                         },
                         new
@@ -125,6 +141,7 @@ namespace StudentiProject.Migrations
                             Id = 4,
                             Address = "Senate House Malet Street London",
                             CityId = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "University of London"
                         },
                         new
@@ -132,6 +149,7 @@ namespace StudentiProject.Migrations
                             Id = 5,
                             Address = "5 Rue Thomas Mann",
                             CityId = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Paris Diderot University"
                         });
                 });
@@ -142,8 +160,12 @@ namespace StudentiProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -153,26 +175,31 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Croatia"
                         },
                         new
                         {
                             Id = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "United States"
                         },
                         new
                         {
                             Id = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "France"
                         },
                         new
                         {
                             Id = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "England"
                         },
                         new
                         {
                             Id = 5,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Netherlands"
                         });
                 });
@@ -183,12 +210,16 @@ namespace StudentiProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<string>("Description");
 
                     b.Property<int>("DivisionId");
 
                     b.Property<string>("Name")
                         .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -200,6 +231,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Full Python Course",
                             DivisionId = 2,
                             Name = "Python Course"
@@ -207,6 +239,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Creating sql database",
                             DivisionId = 2,
                             Name = "SQL Course"
@@ -214,6 +247,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Creating web application",
                             DivisionId = 1,
                             Name = "Web Development"
@@ -221,6 +255,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Full internet infrastructure",
                             DivisionId = 1,
                             Name = "Internet Infrastructure"
@@ -235,8 +270,12 @@ namespace StudentiProject.Migrations
 
                     b.Property<int>("CollegeId");
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -249,12 +288,14 @@ namespace StudentiProject.Migrations
                         {
                             Id = 1,
                             CollegeId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Computer System Maintenance"
                         },
                         new
                         {
                             Id = 2,
                             CollegeId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Computer Science"
                         });
                 });
@@ -265,16 +306,20 @@ namespace StudentiProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CourceId");
+                    b.Property<int>("CourseId");
+
+                    b.Property<DateTime>("CreatedAt");
 
                     b.Property<string>("Description")
                         .IsRequired();
 
                     b.Property<int>("TeacherId");
 
+                    b.Property<DateTime?>("UpdatedAt");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CourceId");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("TeacherId");
 
@@ -284,14 +329,16 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 1,
-                            CourceId = 1,
+                            CourseId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Learning syntax",
                             TeacherId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CourceId = 2,
+                            CourseId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Introductory lecture",
                             TeacherId = 2
                         });
@@ -305,7 +352,7 @@ namespace StudentiProject.Migrations
 
                     b.Property<int>("CourceId");
 
-                    b.Property<int?>("CourseId");
+                    b.Property<DateTime>("CreatedAt");
 
                     b.Property<int>("Evaluation");
 
@@ -314,9 +361,11 @@ namespace StudentiProject.Migrations
 
                     b.Property<int>("StudentId");
 
+                    b.Property<DateTime?>("UpdatedAt");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("CourceId");
 
                     b.HasIndex("StudentId");
 
@@ -327,6 +376,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 1,
                             CourceId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:30H",
                             StudentId = 1
@@ -335,6 +385,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 2,
                             CourceId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 4,
                             ExamTime = "01:15H",
                             StudentId = 2
@@ -343,6 +394,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 3,
                             CourceId = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 4,
                             ExamTime = "01:30H",
                             StudentId = 3
@@ -351,6 +403,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 4,
                             CourceId = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 3,
                             ExamTime = "01:00H",
                             StudentId = 4
@@ -359,6 +412,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 5,
                             CourceId = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 2,
                             ExamTime = "01:45H",
                             StudentId = 2
@@ -367,6 +421,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 6,
                             CourceId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 4,
                             ExamTime = "01:30H",
                             StudentId = 3
@@ -375,6 +430,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 7,
                             CourceId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:15H",
                             StudentId = 1
@@ -383,6 +439,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 8,
                             CourceId = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 3,
                             ExamTime = "01:30H",
                             StudentId = 4
@@ -391,6 +448,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 9,
                             CourceId = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:00H",
                             StudentId = 1
@@ -399,6 +457,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 10,
                             CourceId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:45H",
                             StudentId = 5
@@ -413,6 +472,8 @@ namespace StudentiProject.Migrations
 
                     b.Property<int>("CityId");
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<int>("DivisionId");
 
                     b.Property<string>("FirstName")
@@ -420,6 +481,8 @@ namespace StudentiProject.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -434,6 +497,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 1,
                             CityId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DivisionId = 1,
                             FirstName = "Tomislav ",
                             LastName = "Buhovac"
@@ -442,6 +506,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 2,
                             CityId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DivisionId = 2,
                             FirstName = "Marko ",
                             LastName = "Markic"
@@ -450,6 +515,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 3,
                             CityId = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DivisionId = 2,
                             FirstName = "Ivan ",
                             LastName = "Ivic"
@@ -458,6 +524,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 4,
                             CityId = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DivisionId = 2,
                             FirstName = "Josip ",
                             LastName = "Nesto"
@@ -466,6 +533,7 @@ namespace StudentiProject.Migrations
                         {
                             Id = 5,
                             CityId = 5,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DivisionId = 2,
                             FirstName = "Filip ",
                             LastName = "Novi"
@@ -483,11 +551,15 @@ namespace StudentiProject.Migrations
 
                     b.Property<int>("CityId");
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<string>("FirstName")
                         .IsRequired();
 
                     b.Property<string>("LastName")
                         .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -501,6 +573,7 @@ namespace StudentiProject.Migrations
                             Id = 1,
                             Address = "Nova Cesta 5",
                             CityId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Davor ",
                             LastName = "Znasve"
                         },
@@ -509,6 +582,7 @@ namespace StudentiProject.Migrations
                             Id = 2,
                             Address = "Stara Cesta 4",
                             CityId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Tomislav ",
                             LastName = "Nestovisezna"
                         },
@@ -517,6 +591,7 @@ namespace StudentiProject.Migrations
                             Id = 3,
                             Address = "Novi Put 3",
                             CityId = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Josip ",
                             LastName = "Neznabas"
                         },
@@ -525,6 +600,7 @@ namespace StudentiProject.Migrations
                             Id = 4,
                             Address = "Stari Put 2",
                             CityId = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Ivan ",
                             LastName = "Mozeibolje"
                         },
@@ -533,6 +609,7 @@ namespace StudentiProject.Migrations
                             Id = 5,
                             Address = "Nova Ulica 1",
                             CityId = 5,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Marko ",
                             LastName = "Voliucit"
                         });
@@ -572,13 +649,13 @@ namespace StudentiProject.Migrations
 
             modelBuilder.Entity("StudentiProject.Models.Executor", b =>
                 {
-                    b.HasOne("StudentiProject.Models.Course", "Cource")
-                        .WithMany()
-                        .HasForeignKey("CourceId")
+                    b.HasOne("StudentiProject.Models.Course", "Course")
+                        .WithMany("Executors")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("StudentiProject.Models.Teacher", "Teacher")
-                        .WithMany()
+                        .WithMany("Executors")
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
@@ -586,11 +663,12 @@ namespace StudentiProject.Migrations
             modelBuilder.Entity("StudentiProject.Models.Grade", b =>
                 {
                     b.HasOne("StudentiProject.Models.Course", "Course")
-                        .WithMany()
-                        .HasForeignKey("CourseId");
+                        .WithMany("Grades")
+                        .HasForeignKey("CourceId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("StudentiProject.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("Grades")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });

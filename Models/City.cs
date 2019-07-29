@@ -5,8 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentiProject.Models
 {
-    public class City
+    public class City:BaseModel
     {
+
 
         [Required(ErrorMessage = "Please provide a value for Name field")]
         public string Name { get; set; }

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentiProject.Models
 {
-    public class Country
+    public class Country : BaseModel
     {
 
         [Required(ErrorMessage = "Please provide a value for Name field")]
