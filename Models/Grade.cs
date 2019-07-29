@@ -7,7 +7,6 @@ namespace StudentiProject.Models
 {
     public class Grade
     {
-        public int Id { get; set; }
 
 
         [Required(ErrorMessage = "Please provide with exam time")]

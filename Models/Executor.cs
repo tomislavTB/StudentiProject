@@ -7,7 +7,6 @@ namespace StudentiProject.Models
 {
     public class Executor
     {
-        public int Id { get; set; }
 
         [Required(ErrorMessage = "Please provide a value for Description field")]
         public string Description { get; set; }

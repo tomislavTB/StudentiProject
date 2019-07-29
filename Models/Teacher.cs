@@ -7,7 +7,6 @@ namespace StudentiProject.Models
 {
     public class Teacher
     {
-        public int Id { get; set; }
 
         [Required(ErrorMessage = "Please provide a value for FirstName field")]
         public string FirstName { get; set; }
