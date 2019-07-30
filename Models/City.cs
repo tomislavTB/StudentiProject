@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using StudentiProject.Models.Attributes;
 
 namespace StudentiProject.Models
 {
     public class City:BaseModel
     {
 
-
-        [Required(ErrorMessage = "Please provide a value for Name field")]
+        [CustomRequired]
         public string Name { get; set; }
 
-        [Required, MaxLength(5, ErrorMessage = "Please provide a value Zip code")]
+        [CustomRequired]
         public string Zip { get; set; }
 
 

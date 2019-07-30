@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using StudentiProject.Models.Attributes;
 
 namespace StudentiProject.Models
 {
     public class Executor : BaseModel
     {
 
-        [Required(ErrorMessage = "Please provide a value for Description field")]
+        [CustomRequired]
         public string Description { get; set; }
 
 

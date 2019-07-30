@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using StudentiProject.Models.Attributes;
 
 namespace StudentiProject.Models
 {
     public class College : BaseModel
     {
 
-        [Required(ErrorMessage = "Please provide a value for Name field")]
+        [CustomRequired]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Please provide a value for Address field")]
+        [CustomRequired]
         public string Address { get; set; }
 
 

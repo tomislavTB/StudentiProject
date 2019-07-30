@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using StudentiProject.Models.Attributes;
 
 namespace StudentiProject.Models
 {
@@ -9,10 +10,10 @@ namespace StudentiProject.Models
     {
 
 
-        [Required(ErrorMessage = "Please provide with exam time")]
+        [CustomRequired]
         public string ExamTime { get; set; }
 
-        [Required(ErrorMessage = "Please provide with exam Evaluation")]
+        [CustomRequired]
         public int Evaluation { get; set; }
 
 

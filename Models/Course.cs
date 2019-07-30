@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using StudentiProject.Models.Attributes;
 
 namespace StudentiProject.Models
 {
     public class Course : BaseModel
     {
 
-        [Required(ErrorMessage = "Please provide a value for Name field")]
+        [CustomRequired]
         public string Name { get; set; }
 
 
         public string Description { get; set; }
+
         public int DivisionId { get; set; }
         public Division Division { get; set; }
 

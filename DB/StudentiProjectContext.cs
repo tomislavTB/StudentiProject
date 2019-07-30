@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using System.Threading;
 using StudentiProject.Extensions;
 using System;
+using StudentiProject.Extensions.ModelBuilder;
+using StudentiProject.Models.Interfaces;
+using StudentiProject.Extensions.NewContext;
 
 namespace StudentiProject.DB
 {
@@ -36,37 +39,13 @@ namespace StudentiProject.DB
             foreach (var fk in cascadeFKs)
                 fk.DeleteBehavior = DeleteBehavior.Restrict;
 
+            OnBeforeOnModelCreating(modelBuilder);
+
             base.OnModelCreating(modelBuilder);
 
-            // many-to-many for 
-            // relationship is: client - saving - bank
-
-            modelBuilder.Entity<Executor>()
-                .HasOne<Course>(sc => sc.Course)
-                .WithMany(s => s.Executors)
-                .HasForeignKey(sc => sc.CourseId);
-
-
-            modelBuilder.Entity<Executor>()
-                .HasOne<Teacher>(sc => sc.Teacher)
-                .WithMany(s => s.Executors)
-                .HasForeignKey(sc => sc.TeacherId);
-
-            modelBuilder.Entity<Grade>()
-               .HasOne<Course>(sc => sc.Course)
-               .WithMany(s => s.Grades)
-               .HasForeignKey(sc => sc.CourceId);
-
-
-            modelBuilder.Entity<Grade>()
-                .HasOne<Student>(sc => sc.Student)
-                .WithMany(s => s.Grades)
-                .HasForeignKey(sc => sc.StudentId);
 
 
 
-            // seed data from Extensions/Seeds.cs
-            modelBuilder.Seed();
         }
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {
@@ -74,44 +53,36 @@ namespace StudentiProject.DB
             return base.SaveChanges(acceptAllChangesOnSuccess);
         }
 
-        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
+        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
             OnBeforeSaving();
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
-        private void OnBeforeSaving()
+
+
+
+        private void OnBeforeOnModelCreating(ModelBuilder modelBuilder)
+
         {
-            var entries = ChangeTracker.Entries();
-            foreach (var entry in entries)
-            {
-                if (entry.Entity is BaseModel)
-                {
-                    var now = DateTime.UtcNow;
-                    BaseModel entity = (BaseModel)entry.Entity;
-                    switch (entry.State)
-                    {
-                        case EntityState.Modified:
-                            entity.UpdatedAt = now;
-                            break;
-                        case EntityState.Added:
-                            entity.CreatedAt = now;
-                            break;
-                    }
-                }
-            }
+            modelBuilder.ValidationSetup();
+            modelBuilder.ManyToManySetup();
+            modelBuilder.Seed();
+            modelBuilder.SoftDeleteSetup();
+
+
         }
 
+        private void OnBeforeSaving()
+        {
+            this.UpdateBaseDateable();
+            this.UpdateSoftDeletable();
 
+        }
 
-
-
-
+       
+       
 
 
     }
-
-
-
-    
 }

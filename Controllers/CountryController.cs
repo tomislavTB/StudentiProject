@@ -62,7 +62,7 @@ namespace BankApp.Controllers
 
         // PUT
         [HttpPut("{Id}")]
-        public async Task<IActionResult> PutCountryItem(int Id, Country item)
+        public async Task<IActionResult> PutCountryItem(int Id, [FromBody] Country item)
         {
             item.Id = Id;
 
@@ -77,14 +77,14 @@ namespace BankApp.Controllers
         [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteCountry(int Id)
         {
-            var Country = await _context.Countries.FindAsync(Id);
+            var CountryItem = await _context.Countries.FindAsync(Id);
 
-            if (Country == null)
+            if (CountryItem == null)
             {
                 return NotFound();
             }
 
-            _context.Countries.Remove(Country);
+            _context.Countries.Remove(CountryItem);
             await _context.SaveChangesAsync();
 
             return NoContent();

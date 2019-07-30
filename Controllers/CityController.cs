@@ -57,7 +57,7 @@ namespace StudentiProject.Controllers
 
         // PUT: api/Todo/5
         [HttpPut("{Id}")]
-        public async Task<IActionResult> PutCityItem(int Id, City item)
+        public async Task<IActionResult> PutCityItem(int Id, [FromBody] City item)
         {
             item.Id = Id;
 
@@ -72,14 +72,14 @@ namespace StudentiProject.Controllers
         [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteCity(int Id)
         {
-            var City = await _context.Cities.FindAsync(Id);
+            var CityItem = await _context.Cities.FindAsync(Id);
 
-            if (City == null)
+            if (CityItem == null)
             {
                 return NotFound();
             }
 
-            _context.Cities.Remove(City);
+            _context.Cities.Remove(CityItem);
             await _context.SaveChangesAsync();
 
             return NoContent();

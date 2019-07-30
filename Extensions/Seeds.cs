@@ -6,7 +6,7 @@ namespace StudentiProject.Extensions
 {
     public static class Seeds
     {
-        public static void Seed(this ModelBuilder modelBuilder)
+        public static void Seed(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
         {
             Cities(modelBuilder);
             Colleges(modelBuilder);
@@ -22,7 +22,7 @@ namespace StudentiProject.Extensions
 
 
 
-        public static void Countries(ModelBuilder modelBuilder)
+        public static void Countries(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Country>().HasData(new Country { Id = 1, Name = "Croatia" });
@@ -33,7 +33,7 @@ namespace StudentiProject.Extensions
 
         }
 
-        public static void Cities(ModelBuilder modelBuilder)
+        public static void Cities(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
 
         {
@@ -46,7 +46,7 @@ namespace StudentiProject.Extensions
         }
 
 
-        public static void Colleges(ModelBuilder modelBuilder)
+        public static void Colleges(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<College>().HasData(new College { Id = 1, Name = "University of Applied Sciences Velika Gorica", Address = "Zagrebačka ul. 5", CityId = 1 });
@@ -57,7 +57,7 @@ namespace StudentiProject.Extensions
         }
 
 
-        public static void Courses(ModelBuilder modelBuilder)
+        public static void Courses(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Course>().HasData(new Course { Id = 1, Name = "Python Course", Description = "Full Python Course", DivisionId = 2 });
@@ -67,14 +67,14 @@ namespace StudentiProject.Extensions
 
         }
 
-        public static void Divisions(ModelBuilder modelBuilder)
+        public static void Divisions(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Division>().HasData(new Division { Id = 1, Name = "Computer System Maintenance", CollegeId = 1 });
             modelBuilder.Entity<Division>().HasData(new Division { Id = 2, Name = "Computer Science", CollegeId = 2 });
 
         }
-        public static void Executors(ModelBuilder modelBuilder)
+        public static void Executors(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Executor>().HasData(new Executor { Id = 1, Description = "Learning syntax", CourseId = 1, TeacherId = 1 });
@@ -82,7 +82,7 @@ namespace StudentiProject.Extensions
 
 
         }
-        public static void Grades(ModelBuilder modelBuilder)
+        public static void Grades(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Grade>().HasData(new Grade { Id = 1, ExamTime = "01:30H", Evaluation = 5, CourceId = 1, StudentId = 1 });
@@ -97,7 +97,7 @@ namespace StudentiProject.Extensions
             modelBuilder.Entity<Grade>().HasData(new Grade { Id = 10, ExamTime = "01:45H", Evaluation = 5, CourceId = 1, StudentId = 5 });
         }
 
-        public static void Students(ModelBuilder modelBuilder)
+        public static void Students(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Student>().HasData(new Student { Id = 1, FirstName = "Tomislav ", LastName = "Buhovac", CityId = 1, DivisionId = 1 });
@@ -107,7 +107,7 @@ namespace StudentiProject.Extensions
             modelBuilder.Entity<Student>().HasData(new Student { Id = 5, FirstName = "Filip ", LastName = "Novi", CityId = 5, DivisionId = 2 });
         }
 
-        public static void Teachers(ModelBuilder modelBuilder)
+        public static void Teachers(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
             modelBuilder.Entity<Teacher>().HasData(new Teacher { Id = 1, FirstName = "Davor ", LastName = "Znasve", Address = "Nova Cesta 5", CityId = 1 });

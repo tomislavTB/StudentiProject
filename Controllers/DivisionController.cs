@@ -71,14 +71,14 @@ namespace StudentiProject.Controllers
         [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteDivision(int id)
         {
-            var Division = await _context.Divisions.FindAsync(id);
+            var DivisionItem = await _context.Divisions.FindAsync(id);
 
-            if (Division == null)
+            if (DivisionItem == null)
             {
                 return NotFound();
             }
 
-            _context.Divisions.Remove(Division);
+            _context.Divisions.Remove(DivisionItem);
             await _context.SaveChangesAsync();
 
             return NoContent();

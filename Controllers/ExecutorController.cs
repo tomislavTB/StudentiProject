@@ -69,14 +69,14 @@ namespace StudentiProject.Controllers
         [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteExecutor(int id)
         {
-            var Executor = await _context.Executors.FindAsync(id);
+            var ExecutorItem = await _context.Executors.FindAsync(id);
 
-            if (Executor == null)
+            if (ExecutorItem == null)
             {
                 return NotFound();
             }
 
-            _context.Executors.Remove(Executor);
+            _context.Executors.Remove(ExecutorItem);
             await _context.SaveChangesAsync();
 
             return NoContent();

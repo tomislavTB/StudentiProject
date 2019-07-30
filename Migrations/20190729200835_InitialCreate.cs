@@ -16,6 +16,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
@@ -31,8 +32,9 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(nullable: false),
-                    Zip = table.Column<string>(maxLength: 5, nullable: false),
+                    Zip = table.Column<string>(nullable: false),
                     CountryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -54,6 +56,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     Address = table.Column<string>(nullable: false),
                     CityId = table.Column<int>(nullable: false)
@@ -77,6 +80,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
                     Address = table.Column<string>(nullable: false),
@@ -101,6 +105,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     CollegeId = table.Column<int>(nullable: false)
                 },
@@ -123,6 +128,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     DivisionId = table.Column<int>(nullable: false)
@@ -146,6 +152,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
                     CityId = table.Column<int>(nullable: false),
@@ -176,6 +183,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     Description = table.Column<string>(nullable: false),
                     CourseId = table.Column<int>(nullable: false),
                     TeacherId = table.Column<int>(nullable: false)
@@ -205,6 +213,7 @@ namespace StudentiProject.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
                     ExamTime = table.Column<string>(nullable: false),
                     Evaluation = table.Column<int>(nullable: false),
                     CourceId = table.Column<int>(nullable: false),
@@ -229,109 +238,109 @@ namespace StudentiProject.Migrations
 
             migrationBuilder.InsertData(
                 table: "Countries",
-                columns: new[] { "Id", "CreatedAt", "Name", "UpdatedAt" },
+                columns: new[] { "Id", "CreatedAt", "IsDeleted", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Croatia", null },
-                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "United States", null },
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "France", null },
-                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "England", null },
-                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Netherlands", null }
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Croatia", null },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "United States", null },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "France", null },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "England", null },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Netherlands", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Cities",
-                columns: new[] { "Id", "CountryId", "CreatedAt", "Name", "UpdatedAt", "Zip" },
+                columns: new[] { "Id", "CountryId", "CreatedAt", "IsDeleted", "Name", "UpdatedAt", "Zip" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Velika Gorica", null, "10000" },
-                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "New York", null, "10001" },
-                    { 4, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Paris", null, "75000" },
-                    { 3, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "London ", null, "56273" },
-                    { 5, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Amsterdam ", null, "1011" }
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Velika Gorica", null, "10000" },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "New York", null, "10001" },
+                    { 4, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Paris", null, "75000" },
+                    { 3, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "London ", null, "56273" },
+                    { 5, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Amsterdam ", null, "1011" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Colleges",
-                columns: new[] { "Id", "Address", "CityId", "CreatedAt", "Name", "UpdatedAt" },
+                columns: new[] { "Id", "Address", "CityId", "CreatedAt", "IsDeleted", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "Zagrebačka ul. 5", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "University of Applied Sciences Velika Gorica", null },
-                    { 3, "Vrbik 8", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Tehničko veleučilište u Zagrebu", null },
-                    { 2, "1585 Massachusetts Avenue", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Columbia University", null },
-                    { 5, "5 Rue Thomas Mann", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Paris Diderot University", null },
-                    { 4, "Senate House Malet Street London", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "University of London", null }
+                    { 1, "Zagrebačka ul. 5", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "University of Applied Sciences Velika Gorica", null },
+                    { 3, "Vrbik 8", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Tehničko veleučilište u Zagrebu", null },
+                    { 2, "1585 Massachusetts Avenue", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Columbia University", null },
+                    { 5, "5 Rue Thomas Mann", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Paris Diderot University", null },
+                    { 4, "Senate House Malet Street London", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "University of London", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Teachers",
-                columns: new[] { "Id", "Address", "CityId", "CreatedAt", "FirstName", "LastName", "UpdatedAt" },
+                columns: new[] { "Id", "Address", "CityId", "CreatedAt", "FirstName", "IsDeleted", "LastName", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "Nova Cesta 5", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Davor ", "Znasve", null },
-                    { 2, "Stara Cesta 4", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Tomislav ", "Nestovisezna", null },
-                    { 4, "Stari Put 2", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ivan ", "Mozeibolje", null },
-                    { 3, "Novi Put 3", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Josip ", "Neznabas", null },
-                    { 5, "Nova Ulica 1", 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Marko ", "Voliucit", null }
+                    { 1, "Nova Cesta 5", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Davor ", false, "Znasve", null },
+                    { 2, "Stara Cesta 4", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Tomislav ", false, "Nestovisezna", null },
+                    { 4, "Stari Put 2", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ivan ", false, "Mozeibolje", null },
+                    { 3, "Novi Put 3", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Josip ", false, "Neznabas", null },
+                    { 5, "Nova Ulica 1", 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Marko ", false, "Voliucit", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Divisions",
-                columns: new[] { "Id", "CollegeId", "CreatedAt", "Name", "UpdatedAt" },
-                values: new object[] { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Computer System Maintenance", null });
+                columns: new[] { "Id", "CollegeId", "CreatedAt", "IsDeleted", "Name", "UpdatedAt" },
+                values: new object[] { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Computer System Maintenance", null });
 
             migrationBuilder.InsertData(
                 table: "Divisions",
-                columns: new[] { "Id", "CollegeId", "CreatedAt", "Name", "UpdatedAt" },
-                values: new object[] { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Computer Science", null });
+                columns: new[] { "Id", "CollegeId", "CreatedAt", "IsDeleted", "Name", "UpdatedAt" },
+                values: new object[] { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Computer Science", null });
 
             migrationBuilder.InsertData(
                 table: "Courses",
-                columns: new[] { "Id", "CreatedAt", "Description", "DivisionId", "Name", "UpdatedAt" },
+                columns: new[] { "Id", "CreatedAt", "Description", "DivisionId", "IsDeleted", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Creating web application", 1, "Web Development", null },
-                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Full internet infrastructure", 1, "Internet Infrastructure", null },
-                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Full Python Course", 2, "Python Course", null },
-                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Creating sql database", 2, "SQL Course", null }
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Creating web application", 1, false, "Web Development", null },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Full internet infrastructure", 1, false, "Internet Infrastructure", null },
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Full Python Course", 2, false, "Python Course", null },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Creating sql database", 2, false, "SQL Course", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Students",
-                columns: new[] { "Id", "CityId", "CreatedAt", "DivisionId", "FirstName", "LastName", "UpdatedAt" },
+                columns: new[] { "Id", "CityId", "CreatedAt", "DivisionId", "FirstName", "IsDeleted", "LastName", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Tomislav ", "Buhovac", null },
-                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Marko ", "Markic", null },
-                    { 3, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Ivan ", "Ivic", null },
-                    { 4, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Josip ", "Nesto", null },
-                    { 5, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Filip ", "Novi", null }
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Tomislav ", false, "Buhovac", null },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Marko ", false, "Markic", null },
+                    { 3, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Ivan ", false, "Ivic", null },
+                    { 4, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Josip ", false, "Nesto", null },
+                    { 5, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Filip ", false, "Novi", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Executors",
-                columns: new[] { "Id", "CourseId", "CreatedAt", "Description", "TeacherId", "UpdatedAt" },
+                columns: new[] { "Id", "CourseId", "CreatedAt", "Description", "IsDeleted", "TeacherId", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Learning syntax", 1, null },
-                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introductory lecture", 2, null }
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Learning syntax", false, 1, null },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Introductory lecture", false, 2, null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Grades",
-                columns: new[] { "Id", "CourceId", "CreatedAt", "Evaluation", "ExamTime", "StudentId", "UpdatedAt" },
+                columns: new[] { "Id", "CourceId", "CreatedAt", "Evaluation", "ExamTime", "IsDeleted", "StudentId", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 9, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:00H", 1, null },
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:30H", 1, null },
-                    { 7, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:15H", 1, null },
-                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "01:15H", 2, null },
-                    { 5, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "01:45H", 2, null },
-                    { 3, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "01:30H", 3, null },
-                    { 6, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "01:30H", 3, null },
-                    { 4, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "01:00H", 4, null },
-                    { 8, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "01:30H", 4, null },
-                    { 10, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:45H", 5, null }
+                    { 9, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:00H", false, 1, null },
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:30H", false, 1, null },
+                    { 7, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:15H", false, 1, null },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "01:15H", false, 2, null },
+                    { 5, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "01:45H", false, 2, null },
+                    { 3, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "01:30H", false, 3, null },
+                    { 6, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "01:30H", false, 3, null },
+                    { 4, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "01:00H", false, 4, null },
+                    { 8, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "01:30H", false, 4, null },
+                    { 10, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 5, "01:45H", false, 5, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -385,9 +394,21 @@ namespace StudentiProject.Migrations
                 column: "DivisionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Students_FirstName_LastName",
+                table: "Students",
+                columns: new[] { "FirstName", "LastName" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Teachers_CityId",
                 table: "Teachers",
                 column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Teachers_FirstName_LastName",
+                table: "Teachers",
+                columns: new[] { "FirstName", "LastName" },
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
