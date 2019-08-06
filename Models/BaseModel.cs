@@ -1,19 +1,23 @@
-﻿using StudentiProject.Models.Attributes;
+﻿using Newtonsoft.Json;
+using StudentiProject.Models.Attributes;
+using StudentiProject.Models.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace StudentiProject.Models
 {
-    public class BaseModel
+     public abstract class BaseModel : NewBaseDateable, NewSoftDeletable
+
     {
         public int Id { get; set; }
 
         // modified in ApplicationContext
         public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime? LastModifiedAt { get; set; }
 
         // Inherited from SoftDeletable
-        public bool IsDeleted { get; internal set; }
+        [JsonIgnore]
+        public bool IsDeleted { get; set; } = false;
     }
 }
 

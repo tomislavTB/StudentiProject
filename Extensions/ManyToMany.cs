@@ -38,7 +38,7 @@ namespace StudentiProject.Extensions
             modelBuilder.Entity<Grade>()
                    .HasOne<Course>(sc => sc.Course)
                    .WithMany(s => s.Grades)
-                   .HasForeignKey(sc => sc.CourceId);
+                   .HasForeignKey(sc => sc.CourseId);
 
 
             modelBuilder.Entity<Grade>()

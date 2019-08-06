@@ -12,3 +12,17 @@ C:\Users\Tomislav\Desktop\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProjec
 C:\Users\Tomislav\Desktop\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.RazorTargetAssemblyInfo.cache
 C:\Users\Tomislav\Desktop\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.dll
 C:\Users\Tomislav\Desktop\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.pdb
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.csprojAssemblyReference.cache
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.csproj.CoreCompileInputs.cache
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.RazorAssemblyInfo.cache
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.RazorAssemblyInfo.cs
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.AssemblyInfoInputs.cache
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.AssemblyInfo.cs
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.dll
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.pdb
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\bin\Debug\netcoreapp2.2\StudentiProject.deps.json
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\bin\Debug\netcoreapp2.2\StudentiProject.runtimeconfig.json
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\bin\Debug\netcoreapp2.2\StudentiProject.runtimeconfig.dev.json
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\bin\Debug\netcoreapp2.2\StudentiProject.dll
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\bin\Debug\netcoreapp2.2\StudentiProject.pdb
+C:\Users\Tomislav\Desktop\StudentProjekt\StudentiProject\obj\Debug\netcoreapp2.2\StudentiProject.RazorTargetAssemblyInfo.cache

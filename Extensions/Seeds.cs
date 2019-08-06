@@ -85,16 +85,16 @@ namespace StudentiProject.Extensions
         public static void Grades(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
 
         {
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 1, ExamTime = "01:30H", Evaluation = 5, CourceId = 1, StudentId = 1 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 2, ExamTime = "01:15H", Evaluation = 4, CourceId = 2, StudentId = 2 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 3, ExamTime = "01:30H", Evaluation = 4, CourceId = 3, StudentId = 3 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 4, ExamTime = "01:00H", Evaluation = 3, CourceId = 4, StudentId = 4 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 5, ExamTime = "01:45H", Evaluation = 2, CourceId = 3, StudentId = 2 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 6, ExamTime = "01:30H", Evaluation = 4, CourceId = 2, StudentId = 3 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 7, ExamTime = "01:15H", Evaluation = 5, CourceId = 1, StudentId = 1 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 8, ExamTime = "01:30H", Evaluation = 3, CourceId = 4, StudentId = 4 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 9, ExamTime = "01:00H", Evaluation = 5, CourceId = 3, StudentId = 1 });
-            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 10, ExamTime = "01:45H", Evaluation = 5, CourceId = 1, StudentId = 5 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 1, ExamTime = "01:30H", Evaluation = 5, CourseId = 1, StudentId = 1 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 2, ExamTime = "01:15H", Evaluation = 4, CourseId = 2, StudentId = 2 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 3, ExamTime = "01:30H", Evaluation = 4, CourseId = 3, StudentId = 3 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 4, ExamTime = "01:00H", Evaluation = 3, CourseId = 4, StudentId = 4 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 5, ExamTime = "01:45H", Evaluation = 2, CourseId = 3, StudentId = 2 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 6, ExamTime = "01:30H", Evaluation = 4, CourseId = 2, StudentId = 3 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 7, ExamTime = "01:15H", Evaluation = 5, CourseId = 1, StudentId = 1 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 8, ExamTime = "01:30H", Evaluation = 3, CourseId = 4, StudentId = 4 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 9, ExamTime = "01:00H", Evaluation = 5, CourseId = 3, StudentId = 1 });
+            modelBuilder.Entity<Grade>().HasData(new Grade { Id = 10, ExamTime = "01:45H", Evaluation = 5, CourseId = 1, StudentId = 5 });
         }
 
         public static void Students(this Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)

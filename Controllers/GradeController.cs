@@ -23,7 +23,12 @@ namespace StudentiProject.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Grade>>> GetGradeItem()
         {
-            return await _context.Grades.ToListAsync();
+
+            return await _context.Grades
+                .Include(c => c.Student)
+                .Include(c => c.Course)
+
+                .ToListAsync();
         }
 
 

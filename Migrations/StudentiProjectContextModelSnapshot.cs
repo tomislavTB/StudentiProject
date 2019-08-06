@@ -31,10 +31,10 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
+                    b.Property<DateTime?>("LastModifiedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
-
-                    b.Property<DateTime?>("UpdatedAt");
 
                     b.Property<string>("Zip")
                         .IsRequired();
@@ -108,10 +108,10 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
+                    b.Property<DateTime?>("LastModifiedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
-
-                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -177,10 +177,10 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
+                    b.Property<DateTime?>("LastModifiedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
-
-                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -238,10 +238,10 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
+                    b.Property<DateTime?>("LastModifiedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
-
-                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -300,10 +300,10 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
+                    b.Property<DateTime?>("LastModifiedAt");
+
                     b.Property<string>("Name")
                         .IsRequired();
-
-                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -345,9 +345,9 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
-                    b.Property<int>("TeacherId");
+                    b.Property<DateTime?>("LastModifiedAt");
 
-                    b.Property<DateTime?>("UpdatedAt");
+                    b.Property<int>("TeacherId");
 
                     b.HasKey("Id");
 
@@ -384,7 +384,7 @@ namespace StudentiProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CourceId");
+                    b.Property<int>("CourseId");
 
                     b.Property<DateTime>("CreatedAt");
 
@@ -395,13 +395,13 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
-                    b.Property<int>("StudentId");
+                    b.Property<DateTime?>("LastModifiedAt");
 
-                    b.Property<DateTime?>("UpdatedAt");
+                    b.Property<int>("StudentId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourceId");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("StudentId");
 
@@ -411,7 +411,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 1,
-                            CourceId = 1,
+                            CourseId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:30H",
@@ -421,7 +421,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 2,
-                            CourceId = 2,
+                            CourseId = 2,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 4,
                             ExamTime = "01:15H",
@@ -431,7 +431,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 3,
-                            CourceId = 3,
+                            CourseId = 3,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 4,
                             ExamTime = "01:30H",
@@ -441,7 +441,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 4,
-                            CourceId = 4,
+                            CourseId = 4,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 3,
                             ExamTime = "01:00H",
@@ -451,7 +451,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 5,
-                            CourceId = 3,
+                            CourseId = 3,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 2,
                             ExamTime = "01:45H",
@@ -461,7 +461,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 6,
-                            CourceId = 2,
+                            CourseId = 2,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 4,
                             ExamTime = "01:30H",
@@ -471,7 +471,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 7,
-                            CourceId = 1,
+                            CourseId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:15H",
@@ -481,7 +481,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 8,
-                            CourceId = 4,
+                            CourseId = 4,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 3,
                             ExamTime = "01:30H",
@@ -491,7 +491,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 9,
-                            CourceId = 3,
+                            CourseId = 3,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:00H",
@@ -501,7 +501,7 @@ namespace StudentiProject.Migrations
                         new
                         {
                             Id = 10,
-                            CourceId = 1,
+                            CourseId = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Evaluation = 5,
                             ExamTime = "01:45H",
@@ -527,10 +527,10 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
+                    b.Property<DateTime?>("LastModifiedAt");
+
                     b.Property<string>("LastName")
                         .IsRequired();
-
-                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -614,10 +614,10 @@ namespace StudentiProject.Migrations
 
                     b.Property<bool>("IsDeleted");
 
+                    b.Property<DateTime?>("LastModifiedAt");
+
                     b.Property<string>("LastName")
                         .IsRequired();
-
-                    b.Property<DateTime?>("UpdatedAt");
 
                     b.HasKey("Id");
 
@@ -730,8 +730,8 @@ namespace StudentiProject.Migrations
                 {
                     b.HasOne("StudentiProject.Models.Course", "Course")
                         .WithMany("Grades")
-                        .HasForeignKey("CourceId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("StudentiProject.Models.Student", "Student")
                         .WithMany("Grades")

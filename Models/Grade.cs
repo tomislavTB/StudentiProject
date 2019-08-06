@@ -17,7 +17,7 @@ namespace StudentiProject.Models
         public int Evaluation { get; set; }
 
 
-        public int CourceId { get; set; }
+        public int CourseId { get; set; }
         public Course Course { get; set; }
 
 

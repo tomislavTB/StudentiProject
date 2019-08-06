@@ -24,7 +24,11 @@ namespace StudentiProject.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Course>>> GetCourseItem()
         {
-            return await _context.Courses.ToListAsync();
+            return await _context.Courses
+                 .Include(c => c.Division)
+                 .ToListAsync();
+
+
         }
 
 
